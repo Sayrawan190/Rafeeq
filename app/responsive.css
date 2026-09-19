@@ -1,0 +1,169 @@
+/* Senior mode */
+.senior-welcome { min-height: 150px; border-radius: 24px; padding: 24px; color: white; background: var(--green-900); display: grid; grid-template-columns: 68px 1fr auto; align-items: center; gap: 18px; box-shadow: var(--shadow); }.senior-welcome > span { width: 68px; height: 68px; border-radius: 21px; display: grid; place-items: center; color: var(--green-950); background: #90d9b9; }.senior-welcome > span svg { width: 34px; height: 34px; }.senior-welcome small { color: #b7d3cb; font-size: 12px; }.senior-welcome h1 { margin: 3px 0; font-size: 34px; }.senior-welcome p { margin: 0; color: #c5d9d4; font-size: 12px; }.senior-welcome button { min-height: 50px; padding: 0 16px; border-radius: 14px; display: flex; align-items: center; gap: 8px; color: var(--green-950); background: var(--gold); font-size: 13px; font-weight: 800; }.senior-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 18px; }.senior-grid > a, .senior-grid > button { min-height: 155px; padding: 22px; background: white; border: 2px solid #dce4df; border-radius: 22px; display: grid; grid-template-columns: 60px 1fr 25px; gap: 15px; align-items: center; text-align: start; box-shadow: var(--shadow-sm); }.senior-grid > a > svg:first-child, .senior-grid > button > svg:first-child { width: 60px; height: 60px; padding: 15px; border-radius: 18px; color: var(--green-700); background: var(--green-50); }.senior-grid span { display: grid; }.senior-grid b { font-size: 24px; }.senior-grid small { color: var(--muted); font-size: 13px; margin-top: 6px; }.senior-grid > a > svg:last-child, .senior-grid > button > svg:last-child { color: #849891; }.senior-grid .senior-help { color: white; background: var(--red); border-color: var(--red); }.senior-grid .senior-help > svg:first-child { color: white; background: rgba(255,255,255,.15); }.senior-grid .senior-help small, .senior-grid .senior-help > svg:last-child { color: #ffe3df; }.senior-reminder { margin-top: 18px; min-height: 88px; padding: 15px 20px; display: grid; grid-template-columns: 50px 1fr auto; gap: 13px; align-items: center; border-radius: 19px; background: var(--gold-soft); border: 1px solid #ead7a3; }.senior-reminder > svg { width: 50px; height: 50px; padding: 12px; border-radius: 15px; color: #986b19; background: white; }.senior-reminder b { font-size: 16px; }.senior-reminder p { margin: 4px 0 0; color: #76633e; font-size: 11px; }.senior-reminder button { min-width: 70px; height: 46px; border-radius: 13px; color: white; background: var(--green-800); font-weight: 800; }
+body[data-senior="true"] .side-nav a { min-height: 52px; font-size: 14px; } body[data-senior="true"] .mobile-bottom-nav a { min-height: 69px; font-size: 11px; } body[data-senior="true"] .app-topbar { min-height: 84px; } body[data-senior="true"] .page-content { font-size: 1.08em; }
+
+@media (max-width: 1200px) {
+  .ecosystem-flow { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }.ecosystem-flow article { width: auto; }.ecosystem-flow > i { display: none; }
+  .pilgrim-sidebar, .dashboard-sidebar { transform: translateX(105%); transition: transform .25s ease; box-shadow: -10px 0 35px rgba(5,42,34,.16); }.pilgrim-sidebar.open, .dashboard-sidebar.open { transform: translateX(0); }.sidebar-close, .menu-button { display: inline-grid; }.pilgrim-main, .dashboard-main { padding-right: 0; }
+  .medical-dashboard-grid, .operations-main-grid { grid-template-columns: 1.25fr .75fr; }
+  .patient-row { grid-template-columns: 65px 1.2fr .8fr 45px 1fr 16px; }.patient-row .patient-vital:nth-of-type(2) { display: none; }
+}
+
+@media (max-width: 940px) {
+  .landing-hero { grid-template-columns: 1fr; padding-top: 60px; }.hero-content { text-align: center; margin: auto; }.hero-content > p { margin-inline: auto; }.hero-actions, .hero-trust { justify-content: center; }.hero-visual { margin-top: 45px; }.principles-section { grid-template-columns: 1fr; gap: 30px; }.role-cards { grid-template-columns: 1fr; }.role-card { min-height: 220px; }
+  .pilgrim-home-grid, .journey-layout, .location-layout, .profile-layout, .bracelet-layout { grid-template-columns: 1fr; }.health-hero { grid-row: auto; }.alert-card { grid-column: auto; }.metrics-row { grid-template-columns: repeat(2,1fr); }.journey-detail { grid-template-columns: 1fr 1fr; }.assistant-layout { grid-template-columns: 1fr; height: auto; min-height: 0; }.chat-panel { min-height: 650px; }.assistant-aside { grid-template-columns: 1fr 1fr; }.led-section { grid-template-columns: 1fr; }.sensor-grid { grid-template-columns: repeat(2,1fr); }
+  .medical-dashboard-grid, .operations-main-grid, .operations-bottom-grid, .case-detail-grid, .region-detail-grid { grid-template-columns: 1fr; }.medical-side { grid-template-columns: 1fr 1fr; }.operations-kpis, .overview-cards { grid-template-columns: repeat(2,1fr); }.cases-table, .region-comparison { overflow-x: auto; }.cases-table > header, .case-table-row { min-width: 1020px; }.region-comparison > header, .region-comparison > a { min-width: 1000px; }.case-detail-grid aside { grid-template-columns: repeat(3,1fr); }.sticky-actions { position: static; }.region-detail-hero .risk-score { min-width: 220px; }
+}
+
+@media (max-width: 700px) {
+  .landing-nav { height: 70px; padding: 0 16px; }.landing-nav nav { display: none; }.landing-nav .logo-copy small { display: none; }.landing-hero { padding: 48px 18px 65px; min-height: 0; }.hero-content h1 { font-size: 39px; }.hero-content > p { font-size: 14px; }.hero-actions { flex-direction: column; }.hero-actions a { width: 100%; justify-content: center; }.hero-trust { display: none; }.hero-visual { transform: scale(.87); margin: 5px -25px -40px; }.floating-chip { display: none; }.ecosystem-section, .experiences-section, .principles-section { padding: 62px 18px; }.ecosystem-flow { grid-template-columns: 1fr 1fr; }.section-intro h2, .principles-section h2 { font-size: 27px; }.landing-footer { padding: 20px 18px; gap: 15px; flex-wrap: wrap; }.landing-footer p { order: 3; width: 100%; }
+  .app-topbar { height: 66px; padding: 0 12px; }.topbar-title { display: none; }.topbar-actions { margin-inline-start: auto; }.topbar-actions .language-button span, .role-button > span { display: none; }.topbar-actions .language-button, .role-button { width: 40px; padding: 0; justify-content: center; }.role-button svg { margin: 0; }.page-content { padding: 22px 13px 104px; }.page-heading { align-items: flex-start; }.page-heading h1 { font-size: 23px; }.page-heading > .status-dot, .page-heading > .date-chip, .page-heading > .outline-button { display: none; }.mobile-bottom-nav { position: fixed; z-index: 45; bottom: 0; left: 0; right: 0; min-height: 72px; padding: 7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)); display: flex; align-items: center; justify-content: space-around; background: rgba(255,255,255,.97); border-top: 1px solid #dde3df; box-shadow: 0 -6px 22px rgba(18,63,52,.08); }.mobile-bottom-nav a { width: 20%; min-height: 56px; display: grid; place-items: center; align-content: center; gap: 4px; color: #788b85; font-size: 8px; font-weight: 700; }.mobile-bottom-nav a svg { width: 21px; }.mobile-bottom-nav a.active { color: var(--green-800); }.mobile-bottom-nav a.active svg { fill: var(--green-50); }.sos-floating { left: 16px; bottom: 90px; width: 58px; height: 58px; }
+  .health-hero { padding: 18px; }.health-hero-top { align-items: flex-start; }.stable-mark { display: none; }.metrics-row.compact, .metrics-row, .health-metrics { grid-template-columns: 1fr 1fr; }.metric-card { min-height: 140px; }.health-hero-foot span { display: none; }.quick-grid { grid-template-columns: 1fr 1fr; }.alert-card { grid-template-columns: 40px 1fr; }.alert-card button { grid-column: 1 / 3; }.health-overview { align-items: flex-start; }.health-overview .risk-score { min-width: 0; }.health-overview .risk-score > div:last-child { display: none; }.health-overview .score-ring { width: 60px; height: 60px; }.chart-header { align-items: flex-start; gap: 10px; }.segmented button { padding: 0 8px; }.alerts-list article { grid-template-columns: 38px 1fr auto; }.alerts-list time { display: none; }
+  .journey-detail { grid-template-columns: 1fr; }.timeline-progress { right: 41px; }.location-layout .mini-map { min-height: 390px; }.assistant-aside { grid-template-columns: 1fr; }.assistant-layout { margin: -22px -13px -104px; }.chat-panel { min-height: calc(100vh - 66px); border-radius: 0; }.assistant-aside { padding: 0 13px 100px; }.context-strip > span { padding: 9px 8px; }.chat-disclaimer { padding: 0 8px; }.profile-layout { gap: 12px; }.medical-info-grid { grid-template-columns: 1fr; }.privacy-card { grid-template-columns: 38px 1fr; }.privacy-card button { grid-column: 1 / 3; }.bracelet-hero { grid-template-columns: 1fr 1fr; padding: 18px; }.bracelet-visual { transform: scale(.82); margin: -20px; }.sensor-grid { grid-template-columns: 1fr 1fr; }.led-options { grid-template-columns: 1fr; }.led-options button { min-height: 62px; grid-template-columns: 23px 1fr; text-align: start; justify-items: start; align-items: center; column-gap: 8px; }.led-options small { grid-column: 2; }.sos-modal { min-height: 470px; padding: 28px 20px; }
+  .senior-welcome { grid-template-columns: 52px 1fr; padding: 18px; }.senior-welcome > span { width: 52px; height: 52px; }.senior-welcome h1 { font-size: 29px; }.senior-welcome button { grid-column: 1 / 3; }.senior-grid { grid-template-columns: 1fr; }.senior-grid > a, .senior-grid > button { min-height: 125px; }.senior-reminder { grid-template-columns: 45px 1fr; }.senior-reminder button { grid-column: 1 / 3; }
+  .dashboard-topbar { height: 66px; padding: 0 11px; }.dashboard-topbar > div:nth-child(2), .last-update, .operator-button > span:nth-child(2) { display: none; }.operator-button { padding: 3px; }.dashboard-content { padding: 20px 12px 45px; }.dashboard-heading { align-items: flex-start; }.dashboard-heading h1 { font-size: 23px; }.dashboard-heading > .outline-button, .dashboard-heading > .record-count { display: none; }.overview-cards, .operations-kpis { grid-template-columns: 1fr 1fr; gap: 8px; }.overview-card { min-height: 105px; padding: 12px; grid-template-columns: 36px 1fr; }.overview-card > span { width: 36px; height: 36px; }.overview-card em { display: none; }.medical-side { grid-template-columns: 1fr; }.patient-row { grid-template-columns: 58px 1fr 55px 16px; min-height: 82px; }.patient-row .patient-location, .patient-row .patient-vital, .patient-row .patient-reason { display: none; }.medical-map-section .mini-map { min-height: 240px; }.case-toolbar { flex-wrap: wrap; }.search-box { flex-basis: 100%; }.filter-tabs { width: 100%; overflow-x: auto; }.filter-button { display: none; }.case-hero { align-items: flex-start; gap: 10px; }.case-person > span { width: 44px; height: 44px; }.case-person h1 { font-size: 16px; }.case-action > span { display: none; }.case-action button { width: 42px; padding: 0; font-size: 0; }.case-action button svg { width: 18px; }.response-timeline { overflow-x: auto; grid-template-columns: repeat(5,115px); }.response-timeline span:not(:last-child):after { display: none; }.case-metrics { grid-template-columns: 1fr; }.dual-charts { grid-template-columns: 1fr; }.dual-charts > div + div { border-right: 0; padding-right: 0; }.case-detail-grid aside { grid-template-columns: 1fr; }
+  .operations-kpis article { min-height: 100px; padding: 11px; }.operations-map .mini-map { min-height: 320px; }.map-region-buttons { grid-template-columns: 1fr 1fr; }.operations-bottom-grid { grid-template-columns: 1fr; }.regional-status > div:last-child button { grid-template-columns: 37px 1fr 42px; }.regional-status button .risk-badge { display: none; }.actions-panel > div:last-child { grid-template-columns: 1fr; }.region-comparison { display: none; }.region-cards-mobile { display: grid; gap: 10px; }.region-cards-mobile > a { padding: 14px; }.region-cards-mobile > a > div:first-child { display: flex; align-items: center; gap: 10px; }.region-cards-mobile h2 { margin: 0; font-size: 15px; }.region-cards-mobile > a > div:first-child p { margin: 3px 0 0; color: var(--muted); font-size: 8px; }.region-cards-mobile .risk-badge { margin-inline-start: auto; }.region-cards-mobile > a > div:nth-child(2) { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; margin-top: 12px; }.region-cards-mobile > a > div:nth-child(2) span { display: grid; padding: 8px; background: #f4f6f2; border-radius: 9px; }.region-cards-mobile small { color: var(--muted); font-size: 7px; }.region-cards-mobile b { font: 800 11px Arial; }.region-cards-mobile > a > p { margin: 10px 0 0; color: var(--muted); font-size: 8px; line-height: 1.7; }.region-detail-hero { align-items: flex-start; }.region-detail-letter { width: 50px; height: 50px; }.region-detail-hero .risk-score { min-width: 0; padding: 0; }.region-detail-hero .risk-score > div:last-child { display: none; }.region-detail-kpis { grid-template-columns: 1fr 1fr; }.heatmap .mini-map { min-height: 280px; }.heat-a { right: 40px; }.heat-label { right: 75px; }.action-modal { padding: 26px 19px; }
+}
+
+@media (max-width: 420px) {
+  .metrics-row.compact, .metrics-row, .health-metrics, .quick-grid, .sensor-grid { grid-template-columns: 1fr; }.metrics-row.compact .metric-card { min-height: 112px; }.quick-grid > a, .quick-grid > button { min-height: 72px; }.overview-cards, .operations-kpis { grid-template-columns: 1fr; }.bracelet-hero { grid-template-columns: 1fr; }.bracelet-visual { height: 230px; }.stage-detail-meta { grid-template-columns: 1fr; }.destination-stats { grid-template-columns: 1fr; }.hero-visual { transform: scale(.78); }
+}
+
+/* Readability pass: the original presentation used compact investor-deck sizing.
+   The application uses larger, higher-contrast type for real product screens. */
+.side-nav a, .dash-nav a, .dash-nav > button { font-size: 14px; }
+.page-heading p, .dashboard-heading p { font-size: 14px; line-height: 1.8; }
+.page-heading .eyebrow, .dashboard-heading .eyebrow, .page-content .eyebrow, .dashboard-content .eyebrow { font-size: 12px; }
+.page-content .card-label > span, .dashboard-content .card-label > span { font-size: 13px; }
+.page-content .card-label > small, .dashboard-content .card-label > small { font-size: 11px; }
+.page-content .status-dot, .dashboard-content .status-dot { font-size: 12px; }
+.page-content .risk-badge, .dashboard-content .risk-badge { font-size: 12px; padding: 8px 12px; }
+.page-content .metric-label, .dashboard-content .metric-label { font-size: 12px; font-weight: 700; }
+.page-content .metric-state, .dashboard-content .metric-state { font-size: 10px; }
+.page-content .metric-value b, .dashboard-content .metric-value b { font-size: 31px; }
+.page-content .metric-value small, .dashboard-content .metric-value small { font-size: 10px; }
+.page-content .health-hero-top small, .page-content .health-hero-top p { font-size: 11px; }
+.page-content .health-hero-top h2 { font-size: 24px; }
+.page-content .health-hero-foot, .page-content .health-hero-foot a { font-size: 11px; }
+.page-content .quick-grid b { font-size: 13px; }
+.page-content .quick-grid small { font-size: 10px; line-height: 1.55; }
+.page-content .stage-now small, .page-content .stage-now p, .page-content .next-route small, .page-content .next-route > div > span { font-size: 10px; }
+.page-content .stage-now h2 { font-size: 24px; }
+.page-content .alert-card span { font-size: 10px; }
+.page-content .alert-card b { font-size: 14px; }
+.page-content .alert-card p { font-size: 10px; }
+.page-content .alert-card button { font-size: 11px; }
+.page-content .timeline-item > div > span, .page-content .timeline-item p, .page-content .timeline-item time { font-size: 11px; }
+.page-content .timeline-item h3 { font-size: 20px; }
+.page-content .stage-detail > p, .page-content .dua-card > p { font-size: 13px; }
+.page-content .stage-detail-meta b { font-size: 10px; }
+.page-content .stage-detail-meta small { font-size: 9px; }
+.page-content .route-point small, .page-content .route-point span, .page-content .route-stats small { font-size: 10px; }
+.page-content .route-point b { font-size: 15px; }
+.page-content .destination-stats b { font-size: 14px; }
+.page-content .destination-stats small, .page-content .destination-health > p { font-size: 10px; }
+.page-content .chat-header div span, .page-content .context-strip small, .page-content .context-strip b { font-size: 10px; }
+.page-content .message p { font-size: 13px; line-height: 1.9; }
+.page-content .message time, .page-content .suggested-prompts button, .page-content .chat-disclaimer { font-size: 10px; }
+.page-content .chat-input input { font-size: 13px; }
+.page-content .assistant-context li { font-size: 12px; }
+.page-content .religious-card > button b { font-size: 12px; }
+.page-content .religious-card > button small { font-size: 10px; }
+.page-content .identity-card > p, .page-content .identity-card > span { font-size: 11px; }
+.page-content .identity-grid small, .page-content .info-card > p { font-size: 11px; }
+.page-content .identity-grid b { font-size: 12px; }
+.page-content .info-card-head h3, .page-content .emergency-contact > b { font-size: 14px; }
+.page-content .privacy-card b { font-size: 13px; }
+.page-content .privacy-card p { font-size: 10px; }
+.page-content .bracelet-summary > p, .page-content .bracelet-summary > small { font-size: 11px; }
+.page-content .connection-list b, .page-content .sensor-grid b { font-size: 12px; }
+.page-content .connection-list small, .page-content .sensor-grid small { font-size: 10px; }
+.dashboard-content .overview-card small, .dashboard-content .operations-kpis small { font-size: 10px; }
+.dashboard-content .overview-card p, .dashboard-content .operations-kpis p { font-size: 9px; }
+.dashboard-content .patient-name b, .dashboard-content .patient-reason b { font-size: 11px; }
+.dashboard-content .patient-name small, .dashboard-content .patient-location, .dashboard-content .patient-reason small { font-size: 9px; }
+.dashboard-content .cases-table > header { font-size: 9px; }
+.dashboard-content .cases-table > header,
+.dashboard-content .case-table-row {
+  grid-template-columns: 84px minmax(190px, 1.35fr) minmax(120px, .85fr) minmax(170px, 1.1fr) 90px minmax(190px, 1.35fr) 120px 26px;
+  gap: 12px;
+}
+.dashboard-content .case-table-row { min-height: 88px; font-size: 10px; }
+.dashboard-content .case-table-row .patient-name { min-width: 0; }
+.dashboard-content .case-table-row .patient-details { flex: 1 1 auto; min-width: 0; overflow: hidden; }
+.dashboard-content .case-table-row .patient-name b,
+.dashboard-content .case-table-row .patient-name small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dashboard-content .region-comparison > header,
+.dashboard-content .region-comparison > a {
+  grid-template-columns: minmax(180px, 1.35fr) minmax(115px, .95fr) minmax(100px, .8fr) minmax(110px, .9fr) 90px 95px minmax(115px, .9fr) 90px 25px;
+  gap: 12px;
+}
+.dashboard-content .region-comparison > header { min-height: 58px; font-size: 13px; }
+.dashboard-content .region-comparison > a { min-height: 108px; font-size: 15px; }
+.dashboard-content .region-name { gap: 11px; }
+.dashboard-content .region-name > i { width: 48px; height: 48px; border-radius: 14px; font-size: 17px; }
+.dashboard-content .region-name b { font-size: 16px; }
+.dashboard-content .region-name small { font-size: 12px; margin-top: 6px; }
+.dashboard-content .region-comparison .risk-badge { padding: 10px 14px; font-size: 14px; }
+.dashboard-content .region-comparison .trend-up,
+.dashboard-content .region-comparison .trend-down { gap: 5px; font-size: 15px; }
+.dashboard-content .region-comparison .trend-up svg,
+.dashboard-content .region-comparison .trend-down svg { width: 17px; height: 17px; }
+.dashboard-content .case-person p, .dashboard-content .case-person em { font-size: 10px; }
+.dashboard-content .case-action b { font-size: 12px; }
+.dashboard-content .response-timeline b { font-size: 9px; }
+.dashboard-content .case-history b, .dashboard-content .medical-profile-card dd, .dashboard-content .assigned-team b { font-size: 11px; }
+.dashboard-content .case-history p, .dashboard-content .medical-profile-card dt, .dashboard-content .assigned-team small { font-size: 9px; }
+.dashboard-content .region-live-head p, .dashboard-content .region-live-stats small { font-size: 10px; }
+.dashboard-content .region-live-stats b { font-size: 15px; }
+.dashboard-content .population-alert b { font-size: 11px; }
+.dashboard-content .population-alert p, .dashboard-content .population-alert span { font-size: 9px; }
+.dashboard-content .regional-status button b, .dashboard-content .aggregated-insights b { font-size: 11px; }
+.dashboard-content .regional-status button p, .dashboard-content .aggregated-insights p { font-size: 9px; }
+
+/* Senior mode is a separate, simplified UX with very large bold type and targets. */
+.senior-active .app-topbar { min-height: 90px; }
+.senior-active .page-content { max-width: 1180px; }
+.senior-active .side-nav a { min-height: 62px; font-size: 17px; font-weight: 900; }
+.senior-active .page-heading h1 { font-size: 38px; font-weight: 900; }
+.senior-active .page-heading p { font-size: 17px; font-weight: 700; }
+.senior-active .page-content .metric-card { min-height: 220px; padding: 22px; }
+.senior-active .page-content .metric-icon { width: 48px; height: 48px; }
+.senior-active .page-content .metric-icon svg { width: 26px; height: 26px; }
+.senior-active .page-content .metric-label { font-size: 16px; font-weight: 900; margin-top: 16px; }
+.senior-active .page-content .metric-state { font-size: 13px; font-weight: 900; }
+.senior-active .page-content .metric-value b { font-size: 47px; font-weight: 900; }
+.senior-active .page-content .metric-value small { font-size: 15px; font-weight: 800; }
+.senior-active .page-content .section-title h2 { font-size: 31px; font-weight: 900; }
+.senior-active .senior-welcome { min-height: 188px; padding: 30px; }
+.senior-active .senior-welcome small { font-size: 16px; font-weight: 800; }
+.senior-active .senior-welcome h1 { font-size: 48px; font-weight: 900; }
+.senior-active .senior-welcome p { font-size: 17px; font-weight: 700; }
+.senior-active .senior-welcome button { min-height: 62px; padding: 0 23px; font-size: 16px; font-weight: 900; }
+.senior-active .senior-grid { gap: 20px; margin-top: 22px; }
+.senior-active .senior-grid > a, .senior-active .senior-grid > button { min-height: 180px; border-width: 3px; padding: 27px; }
+.senior-active .senior-grid > a > svg:first-child, .senior-active .senior-grid > button > svg:first-child { width: 72px; height: 72px; padding: 17px; }
+.senior-active .senior-grid b { font-size: 31px; font-weight: 900; }
+.senior-active .senior-grid small { font-size: 17px; font-weight: 800; }
+.senior-active .senior-reminder { min-height: 112px; padding: 20px 24px; }
+.senior-active .senior-reminder b { font-size: 21px; font-weight: 900; }
+.senior-active .senior-reminder p { font-size: 15px; font-weight: 700; }
+.senior-active .senior-reminder button { min-width: 92px; height: 58px; font-size: 17px; font-weight: 900; }
+
+@media (max-width: 700px) {
+  .side-nav a, .dash-nav a, .dash-nav > button { font-size: 16px; }
+  .page-heading p, .dashboard-heading p { font-size: 13px; }
+  .page-content .metric-card { min-height: 160px; }
+  .page-content .metric-value b { font-size: 35px; }
+  .page-content .quick-grid b { font-size: 14px; }
+  .page-content .quick-grid small { font-size: 11px; }
+  .senior-active .app-topbar { min-height: 78px; }
+  .senior-active .page-content { padding-top: 24px; }
+  .senior-active .senior-welcome { min-height: 210px; padding: 23px; }
+  .senior-active .senior-welcome h1 { font-size: 42px; }
+  .senior-active .senior-welcome p { font-size: 15px; }
+  .senior-active .senior-grid > a, .senior-active .senior-grid > button { min-height: 148px; padding: 20px; }
+  .senior-active .senior-grid b { font-size: 27px; }
+  .senior-active .senior-grid small { font-size: 15px; }
+  .senior-active .senior-reminder { min-height: 140px; }
+}
