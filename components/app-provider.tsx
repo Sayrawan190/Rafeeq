@@ -13,7 +13,16 @@ type AppContextValue = {
   notify: (message: string) => void;
 };
 
-const AppContext = createContext<AppContextValue | null>(null);
+const fallbackContext: AppContextValue = {
+  language: "ar",
+  senior: false,
+  setLanguage: () => undefined,
+  setSenior: () => undefined,
+  tr: (ar) => ar,
+  notify: () => undefined,
+};
+
+const AppContext = createContext<AppContextValue>(fallbackContext);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("ar");
@@ -73,7 +82,5 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useRafeeq() {
-  const value = useContext(AppContext);
-  if (!value) throw new Error("useRafeeq must be used inside AppProvider");
-  return value;
+  return useContext(AppContext);
 }
