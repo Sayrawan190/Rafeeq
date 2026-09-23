@@ -5,7 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import {
   Activity,
   Bell,
-  Bluetooth,
   Bot,
   BriefcaseMedical,
   ChevronDown,
@@ -23,6 +22,7 @@ import {
   ShieldCheck,
   Siren,
   UsersRound,
+  Watch,
   X,
 } from "lucide-react";
 import { useState } from "react";
@@ -35,6 +35,7 @@ const pilgrimNav = [
   { href: "/app/journey", ar: "رحلتي", en: "Journey", icon: Route },
   { href: "/app/location", ar: "موقعي", en: "Location", icon: MapPin },
   { href: "/app/assistant", ar: "اسأل رفيق", en: "Ask Rafeeq", icon: Bot },
+  { href: "/app/bracelet", ar: "السوار", en: "Band", icon: Watch },
 ];
 
 export function PilgrimShell({ children }: { children: React.ReactNode }) {
@@ -54,7 +55,7 @@ export function PilgrimShell({ children }: { children: React.ReactNode }) {
       <aside className={`pilgrim-sidebar ${menuOpen ? "open" : ""}`}>
         <div className="sidebar-head"><Logo /><button className="icon-btn sidebar-close" onClick={() => setMenuOpen(false)} aria-label="إغلاق القائمة"><X /></button></div>
         <div className="pilgrim-card-mini">
-          <span>ع</span><div><b>عبدالله الحربي</b><small>RFQ-20481</small></div><StatusDot>متصل</StatusDot>
+          <span className="pilgrim-avatar">ع</span><div><b>عبدالله الحربي</b><small>RFQ-20481</small></div><StatusDot>متصل</StatusDot>
         </div>
         <nav className="side-nav" aria-label="التنقل الرئيسي">
           {pilgrimNav.map(({ href, ar, en, icon: Icon }) => {
@@ -63,7 +64,6 @@ export function PilgrimShell({ children }: { children: React.ReactNode }) {
           })}
           <div className="nav-divider" />
           <Link className={pathname === "/app/profile" ? "active" : ""} href="/app/profile"><CircleUserRound size={20}/><span>{tr("الملف الطبي", "Medical profile")}</span></Link>
-          <Link className={pathname === "/app/bracelet" ? "active" : ""} href="/app/bracelet"><Bluetooth size={20}/><span>{tr("السوار الذكي", "Smart bracelet")}</span></Link>
         </nav>
         <button className={`senior-toggle ${senior ? "on" : ""}`} onClick={() => { setSenior(!senior); notify(!senior ? "تم تفعيل وضع كبار السن" : "تم إيقاف وضع كبار السن"); }}>
           <span><AccessibilityMark /><b>{tr("وضع كبار السن", "Senior mode")}</b><small>{tr("واجهة أكبر وأكثر بساطة", "Larger, simpler interface")}</small></span>
@@ -75,7 +75,7 @@ export function PilgrimShell({ children }: { children: React.ReactNode }) {
       <div className="pilgrim-main">
         <header className="app-topbar">
           <button className="icon-btn menu-button" onClick={() => setMenuOpen(true)} aria-label="فتح القائمة"><Menu /></button>
-          <div className="topbar-title"><small>{tr("رحلة حج 1447 هـ", "Hajj journey 1447")}</small><b>{tr("أهلاً بك يا عبدالله", "Welcome, Abdullah")}</b></div>
+          <div className="topbar-title"><small>{tr("رحلة حج 1448 هـ", "Hajj journey 1448")}</small><b>{tr("أهلاً بك يا عبدالله", "Welcome, Abdullah")}</b></div>
           <div className="topbar-actions">
             <button className="language-button" onClick={() => setLanguage(language === "ar" ? "en" : "ar")}><Languages size={18}/><span>{language === "ar" ? "English" : "العربية"}</span></button>
             <button className="icon-btn notification-button" onClick={() => notify(tr("لديك تنبيه واحد: موعد التحرك 7:15 م", "One alert: departure at 7:15 PM"))} aria-label="التنبيهات"><Bell size={20}/><i>1</i></button>
@@ -89,7 +89,7 @@ export function PilgrimShell({ children }: { children: React.ReactNode }) {
       </div>
 
       <nav className="mobile-bottom-nav" aria-label="التنقل على الجوال">
-        {(senior ? [pilgrimNav[0], pilgrimNav[1], pilgrimNav[2], pilgrimNav[4]] : pilgrimNav).map(({ href, ar, en, icon: Icon }) => {
+        {pilgrimNav.map(({ href, ar, en, icon: Icon }) => {
           const active = href === "/app" ? pathname === href : pathname.startsWith(href);
           return <Link key={href} className={active ? "active" : ""} href={href}><Icon/><span>{tr(ar, en)}</span></Link>;
         })}

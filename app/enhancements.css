@@ -1,0 +1,481 @@
+/* Refinements layered over the existing Rafiq design system. */
+.soft-button {
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 13px;
+  color: var(--green-800);
+  background: var(--green-50);
+  font-weight: 800;
+}
+
+/* Readability baseline for compact interface copy. */
+.pilgrim-card-mini { grid-template-columns: 42px 1fr; column-gap: 10px; align-items: start; }
+.pilgrim-card-mini > .pilgrim-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.pilgrim-card-mini b { font-size: 13px; line-height: 1.45; }
+.pilgrim-card-mini small { margin-top: 2px; font-size: 11px; line-height: 1.4; }
+.pilgrim-card-mini > .status-dot {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: start;
+  width: max-content;
+  height: 23px;
+  min-width: 0;
+  margin-top: 6px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  color: var(--green-700);
+  background: #dff2ea;
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.pilgrim-card-mini > .status-dot i {
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  background: #24966f;
+  box-shadow: none;
+}
+.senior-toggle { min-height: 74px; padding: 11px 12px; }
+.senior-toggle > span { grid-template-columns: 32px 1fr; column-gap: 9px; }
+.senior-toggle .accessibility-mark { width: 32px; height: 32px; }
+.senior-toggle b { font-size: 13px; line-height: 1.4; }
+.senior-toggle small { margin-top: 3px; font-size: 11px; line-height: 1.45; }
+.sidebar-foot { font-size: 11px; line-height: 1.5; }
+
+.assistant-chat-only {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 138px);
+  min-height: 640px;
+}
+.assistant-chat-only .chat-panel {
+  width: 100%;
+  height: 100%;
+}
+.assistant-chat-only .message > div { max-width: min(78%, 820px); }
+.assistant-chat-only .messages { padding-inline: clamp(20px, 5vw, 72px); }
+.assistant-chat-only .suggested-prompts,
+.assistant-chat-only .chat-input { margin-inline: clamp(18px, 4vw, 58px); }
+.assistant-chat-only .chat-header { min-height: 92px; padding: 16px 24px; gap: 14px; }
+.assistant-chat-only .bot-avatar { width: 52px; height: 52px; border-radius: 16px; }
+.assistant-chat-only .bot-avatar svg { width: 25px; height: 25px; }
+.assistant-chat-only .chat-header h1 { font-size: 23px; }
+.assistant-chat-only .chat-header div span { font-size: 13px; }
+.assistant-chat-only .chat-header div span i { width: 8px; height: 8px; }
+.assistant-chat-only .chat-header > button { width: 46px; height: 46px; }
+.assistant-chat-only .chat-header > button svg { width: 22px; height: 22px; }
+.assistant-chat-only .context-strip > span { grid-template-columns: 28px 1fr; padding: 13px 20px; }
+.assistant-chat-only .context-strip svg { width: 20px; }
+.assistant-chat-only .context-strip small { font-size: 11px !important; }
+.assistant-chat-only .context-strip b { margin-top: 3px; font-size: 14px; }
+.assistant-chat-only .messages { padding-top: 24px; padding-bottom: 24px; }
+.assistant-chat-only .conversation-date { padding: 7px 12px; font-size: 11px; }
+.assistant-chat-only .message { gap: 11px; margin-bottom: 18px; }
+.assistant-chat-only .message > span { width: 38px; height: 38px; border-radius: 11px; font-size: 13px; }
+.assistant-chat-only .message > span svg { width: 20px; height: 20px; }
+.assistant-chat-only .message p { padding: 14px 16px; font-size: 16px !important; line-height: 1.9; }
+.assistant-chat-only .message time { margin-top: 6px; font-size: 12px !important; }
+.assistant-chat-only .authority-button { min-height: 40px; font-size: 12px; }
+.assistant-chat-only .suggested-prompts { gap: 9px; padding-block: 12px; }
+.assistant-chat-only .suggested-prompts button { height: 40px; padding-inline: 15px; font-size: 13px; font-weight: 800; }
+.assistant-chat-only .chat-input { min-height: 62px; padding: 7px; border-radius: 18px; }
+.assistant-chat-only .chat-input input { font-size: 16px; }
+.assistant-chat-only .chat-input button { width: 46px; height: 46px; border-radius: 13px; }
+.assistant-chat-only .chat-input svg { width: 21px; height: 21px; }
+.assistant-chat-only .chat-disclaimer { min-height: 36px; font-size: 12px; }
+.assistant-chat-only .chat-disclaimer svg { width: 15px; height: 15px; }
+
+.senior-active .assistant-chat-only .chat-header { min-height: 112px; padding: 20px 28px; }
+.senior-active .assistant-chat-only .bot-avatar { width: 66px; height: 66px; border-radius: 20px; }
+.senior-active .assistant-chat-only .bot-avatar svg { width: 32px; height: 32px; }
+.senior-active .assistant-chat-only .chat-header h1 { font-size: 30px; font-weight: 900; }
+.senior-active .assistant-chat-only .chat-header div span { font-size: 17px; font-weight: 800; }
+.senior-active .assistant-chat-only .chat-header > button { width: 58px; height: 58px; }
+.senior-active .assistant-chat-only .chat-header > button svg { width: 27px; height: 27px; }
+.senior-active .assistant-chat-only .context-strip > span { grid-template-columns: 36px 1fr; padding: 18px 24px; }
+.senior-active .assistant-chat-only .context-strip svg { width: 26px; }
+.senior-active .assistant-chat-only .context-strip small { font-size: 15px !important; font-weight: 800; }
+.senior-active .assistant-chat-only .context-strip b { font-size: 18px; font-weight: 900; }
+.senior-active .assistant-chat-only .message { gap: 14px; margin-bottom: 24px; }
+.senior-active .assistant-chat-only .message > span { width: 52px; height: 52px; border-radius: 15px; font-size: 17px; }
+.senior-active .assistant-chat-only .message > span svg { width: 27px; height: 27px; }
+.senior-active .assistant-chat-only .message p { padding: 18px 21px; font-size: 21px !important; font-weight: 700; line-height: 2; }
+.senior-active .assistant-chat-only .message time { font-size: 14px !important; }
+.senior-active .assistant-chat-only .suggested-prompts { padding-block: 15px; }
+.senior-active .assistant-chat-only .suggested-prompts button { height: 50px; padding-inline: 20px; font-size: 17px; }
+.senior-active .assistant-chat-only .chat-input { min-height: 76px; padding: 9px; border-radius: 21px; }
+.senior-active .assistant-chat-only .chat-input input { font-size: 20px; font-weight: 700; }
+.senior-active .assistant-chat-only .chat-input button { width: 58px; height: 58px; border-radius: 16px; }
+.senior-active .assistant-chat-only .chat-input svg { width: 27px; height: 27px; }
+.senior-active .assistant-chat-only .chat-disclaimer { min-height: 46px; font-size: 14px; font-weight: 700; }
+
+.page-content p { font-size: 12px !important; line-height: 1.7; }
+.page-content small,
+.page-content time { font-size: 11px !important; line-height: 1.5; }
+.dashboard-content p { font-size: 11px !important; line-height: 1.65; }
+.dashboard-content small,
+.dashboard-content time { font-size: 11px !important; line-height: 1.5; }
+
+.demo-label,
+.demo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: var(--gold-dark);
+  background: var(--gold-soft);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* Dedicated role selection */
+.demo-selection {
+  min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(circle at 14% 15%, rgba(32, 128, 104, .5), transparent 30%),
+    linear-gradient(145deg, #07382f, #0a4d3f 55%, #052e27);
+}
+.demo-selection .landing-nav { background: rgba(251, 248, 241, .96); }
+.demo-selection .language-button { color: var(--ink); }
+.demo-back { display: inline-flex; align-items: center; gap: 7px; color: var(--green-800); font-size: 12px; font-weight: 800; }
+.demo-selection-main { min-height: calc(100vh - 82px); padding: 70px clamp(22px, 7vw, 110px); display: grid; place-items: center; align-content: center; gap: 36px; }
+.demo-selection-intro { max-width: 720px; text-align: center; }
+.demo-selection-intro .demo-pill { margin: 0 auto 20px; }
+.demo-selection-intro h1 { margin-bottom: 15px; font-size: clamp(34px, 5vw, 58px); letter-spacing: -.05em; }
+.demo-selection-intro p { margin: 0; color: #c4d9d3; font-size: 15px; line-height: 1.9; }
+.demo-role-cards { width: min(1100px, 100%); }
+.demo-context-note { display: flex; align-items: center; gap: 8px; margin: 0; color: #afc8c1; font-size: 11px; }
+
+/* Pilgrim refinements */
+.reading-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 2px; }
+.reading-meta span,
+.reading-meta a { min-height: 34px; display: inline-flex; align-items: center; gap: 6px; padding: 0 11px; border: 1px solid #e1e5df; border-radius: 10px; color: var(--muted); background: white; font-size: 9px; font-weight: 700; }
+.reading-meta svg { width: 14px; color: var(--green-700); }
+.reading-meta a { margin-inline-start: auto; color: var(--green-800); }
+.quick-grid { grid-template-columns: repeat(5, 1fr); }
+.journey-map-card { padding: 17px; }
+.journey-map-image { width: 100%; height: auto; display: block; margin-top: 12px; border: 1px solid #e5e5dc; border-radius: 16px; background: #f8f7f1; box-shadow: 0 8px 22px rgba(17, 63, 52, .08); }
+.journey-map-caption { margin: 11px 2px 0; color: var(--muted); font-size: 13px !important; line-height: 1.6; text-align: center; }
+.timeline-item.upcoming { opacity: .72; }
+.timeline-item.upcoming .timeline-node { color: #778883; background: #edf0ed; border-color: #d4dad6; }
+.led-guide > span { min-height: 78px; padding: 10px; display: grid; place-items: center; border: 1px solid #e5e7e1; border-radius: 13px; background: #fafbf8; }
+.demo-tools { margin-top: 14px; padding: 22px; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 22px; }
+.demo-tools h2 { margin: 8px 0 5px; font-size: 19px; }
+.demo-tools p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+.demo-state-buttons { display: flex; gap: 6px; padding: 4px; border-radius: 12px; background: #eff1ed; }
+.demo-state-buttons button { min-height: 36px; padding: 0 11px; border-radius: 9px; color: var(--muted); background: transparent; font-size: 9px; font-weight: 800; }
+.demo-state-buttons button.active { color: var(--green-900); background: white; box-shadow: var(--shadow-sm); }
+
+/* Emergency preview */
+.emergency-preview { position: relative; width: min(560px, 100%); padding: 26px; box-shadow: 0 28px 80px rgba(5, 46, 39, .28); }
+.emergency-preview > header { display: flex; align-items: center; gap: 12px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.emergency-preview > header > span { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 13px; color: white; background: var(--green-800); }
+.emergency-preview header small { color: var(--gold-dark); font-size: 9px; font-weight: 800; }
+.emergency-preview header h2 { margin: 4px 0 0; font-size: 20px; }
+.emergency-person { display: grid; grid-template-columns: 48px 1fr auto; gap: 11px; align-items: center; margin: 18px 0; padding: 13px; border-radius: 14px; background: var(--green-50); }
+.emergency-person > span { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 13px; color: white; background: var(--green-700); font-weight: 900; }
+.emergency-person h3 { margin: 0 0 4px; font-size: 15px; }
+.emergency-person p { margin: 0; color: var(--muted); font-size: 9px; }
+.emergency-person > b { color: var(--red); font: 900 24px Arial; }
+.emergency-preview dl { display: grid; gap: 8px; margin: 0; }
+.emergency-preview dl div { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 11px 12px; border: 1px solid #e6e8e2; border-radius: 11px; }
+.emergency-preview dt { color: var(--muted); font-size: 9px; }
+.emergency-preview dd { margin: 0; font-size: 10px; font-weight: 800; }
+.emergency-preview > footer { display: flex; align-items: center; gap: 7px; margin-top: 16px; color: var(--muted); font-size: 9px; }
+
+/* Medical drawer and workflow separation */
+.patient-row { width: 100%; color: inherit; }
+.case-list .patient-row { grid-template-columns: 65px 1.15fr .8fr 45px 45px 1fr 82px 16px; }
+.patient-details-text { min-width: 0; display: grid !important; width: auto !important; height: auto !important; place-items: initial !important; color: inherit !important; background: transparent !important; border-radius: 0 !important; }
+.workflow-chip { display: inline-flex; align-items: center; justify-content: center; min-height: 27px; padding: 0 9px; border-radius: 999px; white-space: nowrap; font-size: 8px; font-weight: 800; }
+.workflow-chip.new { color: #a42a2a; background: var(--red-soft); }
+.workflow-chip.progress { color: #8c651d; background: var(--gold-soft); }
+.workflow-chip.done { color: var(--green-700); background: var(--green-50); }
+.case-table-row { width: 100%; color: inherit; text-align: start; background: transparent; }
+.cases-table > header,
+.case-table-row { grid-template-columns: 84px 1.05fr .78fr .92fr 1.1fr 82px .72fr; }
+.case-score-time { display: grid !important; align-items: start !important; }
+.case-score-time small { color: var(--muted); font-size: 7px; }
+.drawer-backdrop { position: fixed; inset: 0; z-index: 180; display: flex; justify-content: flex-start; background: rgba(5, 35, 29, .42); backdrop-filter: blur(3px); animation: fade-in .18s ease; }
+.case-drawer { width: min(560px, 94vw); height: 100%; overflow-y: auto; padding: 24px; color: var(--ink); background: #fbfaf6; box-shadow: 18px 0 60px rgba(4, 35, 29, .25); animation: drawer-in .24s ease; }
+.drawer-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.drawer-header h2 { margin: 0 0 6px; font-size: 23px; }
+.drawer-header p { display: flex; align-items: center; gap: 5px; margin: 0; color: var(--muted); font-size: 9px; }
+.drawer-header p svg { width: 13px; }
+.drawer-header > button { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; background: white; border: 1px solid var(--line); }
+.drawer-summary { display: grid; grid-template-columns: auto 1fr 1fr auto; gap: 8px; align-items: center; margin: 16px 0; padding: 12px; border: 1px solid #e2e5de; border-radius: 14px; background: white; }
+.drawer-summary > span:not(.risk-badge):not(.workflow-chip) { display: grid; padding-inline: 10px; border-inline-start: 1px solid #e4e7e1; }
+.drawer-summary small { color: var(--muted); font-size: 7px; }
+.drawer-summary b { margin-top: 3px; font: 800 10px Arial; }
+.drawer-section { margin-top: 12px; padding: 17px; border: 1px solid #e2e5de; border-radius: 16px; background: white; }
+.drawer-section h3 { margin: 0 0 13px; font-size: 13px; }
+.drawer-vitals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.drawer-vitals > span { min-height: 85px; display: grid; align-content: center; gap: 5px; padding: 11px; border-radius: 12px; background: #f6f7f3; }
+.drawer-vitals svg { width: 17px; color: var(--green-700); }
+.drawer-vitals small { color: var(--muted); font-size: 8px; }
+.drawer-vitals b { font: 900 17px Arial; }
+.drawer-vitals em { font: 700 7px Tahoma; color: var(--muted); }
+.drawer-indicator { display: flex; align-items: center; gap: 7px; margin: 10px 0 0; padding: 9px; border-radius: 10px; color: #8c531c; background: var(--orange-soft); font-size: 9px; }
+.drawer-indicator svg { width: 15px; }
+.drawer-medical { margin: 0; display: grid; gap: 7px; }
+.drawer-medical div { display: grid; grid-template-columns: 145px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid #ecece7; }
+.drawer-medical dt { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 8px; }
+.drawer-medical dt svg { width: 14px; color: var(--green-700); }
+.drawer-medical dd { margin: 0; font-size: 9px; font-weight: 800; }
+.drawer-timeline { display: grid; }
+.drawer-timeline > span { position: relative; min-height: 46px; display: grid; grid-template-columns: 18px 1fr; gap: 9px; }
+.drawer-timeline > span:not(:last-child):after { content: ""; position: absolute; right: 6px; top: 17px; bottom: -2px; width: 1px; background: #dce2de; }
+.drawer-timeline i { z-index: 1; width: 13px; height: 13px; margin-top: 2px; border: 2px solid #c8d0cc; border-radius: 50%; background: white; }
+.drawer-timeline .done i { border-color: var(--green-700); background: var(--green-700); }
+.drawer-timeline .active i { border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); }
+.drawer-timeline div { display: grid; align-content: start; }
+.drawer-timeline b { font-size: 9px; }
+.drawer-timeline small { margin-top: 3px; color: var(--muted); font-size: 7px; }
+.drawer-actions { position: sticky; bottom: -24px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 16px -24px -24px; padding: 14px 24px 20px; border-top: 1px solid var(--line); background: rgba(251,250,246,.96); backdrop-filter: blur(12px); }
+.drawer-actions button { min-height: 42px; font-size: 9px; }
+@keyframes drawer-in { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* Operations schematic, risk help and activity feed */
+.sector-map { position: relative; min-height: 380px; margin-top: 13px; overflow: hidden; border: 1px solid #dfe4de; border-radius: 18px; background: linear-gradient(135deg, #f8f6ef, #eef3ee); }
+.sector-map:before { content: ""; position: absolute; inset: 0; opacity: .45; background-image: linear-gradient(rgba(13,91,73,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(13,91,73,.055) 1px, transparent 1px); background-size: 32px 32px; }
+.sector-connections { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.sector-connection { fill: none; stroke: #a9b9b4; stroke-width: 2.4; stroke-dasharray: 8 8; vector-effect: non-scaling-stroke; }
+.sector-block { position: absolute; z-index: 2; width: 150px; min-height: 112px; padding: 14px; display: grid; align-content: start; text-align: start; border: 1px solid #d9dfda; border-radius: 17px; background: rgba(255,255,255,.94); box-shadow: 0 9px 22px rgba(17,63,52,.08); transition: .2s ease; }
+.sector-block:hover, .sector-block.active { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 14px 28px rgba(17,63,52,.14); }
+.sector-block.active:after { content: "القطاع المحدد"; position: absolute; top: -10px; left: 12px; padding: 4px 7px; border-radius: 10px; color: #254239; background: #efd483; font-size: 7px; font-weight: 900; }
+.sector-1 { top: 12%; right: 8%; }.sector-2 { top: 18%; left: 30%; }.sector-3 { bottom: 12%; right: 34%; }.sector-4 { bottom: 11%; left: 6%; }
+.sector-signal { display: flex; justify-content: space-between; align-items: center; }
+.sector-signal i { width: 10px; height: 10px; border-radius: 50%; background: var(--green-700); box-shadow: 0 0 0 5px var(--green-50); }
+.level-medium .sector-signal i { background: var(--orange); box-shadow: 0 0 0 5px var(--orange-soft); }
+.level-high .sector-signal i, .level-critical .sector-signal i { background: var(--red); box-shadow: 0 0 0 5px var(--red-soft); }
+.sector-signal em { font: 900 13px Arial; font-style: normal; }
+.sector-block > b { margin-top: 12px; font-size: 15px; }
+.sector-block > small { margin-top: 3px; color: var(--muted); font-size: 8px; }
+.sector-metrics { display: flex; gap: 7px; margin-top: 10px; color: var(--muted); font-size: 7px; }
+.sector-metrics em { font-style: normal; }
+.sector-map-note { position: absolute; z-index: 2; right: 14px; bottom: 12px; display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 8px; }
+.risk-help { margin: 0 0 14px; padding: 12px 15px; border: 1px solid #dedfd7; border-radius: 14px; color: var(--muted); background: white; font-size: 9px; }
+.risk-help.compact { margin: 9px 0 0; background: #fafbf8; }
+.risk-help summary { display: flex; align-items: center; gap: 7px; color: var(--green-800); cursor: pointer; font-weight: 800; }
+.risk-help summary svg { width: 15px; }
+.risk-help p { margin: 10px 0; line-height: 1.75; }
+.risk-help > div { display: flex; flex-wrap: wrap; gap: 12px; }
+.risk-help > div span { display: flex; align-items: center; gap: 5px; }
+.risk-help i { width: 8px; height: 8px; border-radius: 50%; background: var(--green-700); }
+.risk-help i.medium { background: var(--orange); }.risk-help i.high { background: var(--red); }
+.activity-feed { margin-top: 15px; padding: 18px; }
+.activity-feed .section-title { margin: 0 0 8px; }
+.activity-feed > div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.activity-feed article { min-height: 64px; display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; border-top: 1px solid #e7e9e4; }
+.activity-feed article > i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.activity-feed article > i.closed { background: var(--green-700); }.activity-feed article > i.new { background: var(--red); }
+.activity-feed article div { display: grid; }
+.activity-feed b { font-size: 13px; line-height: 1.5; }.activity-feed small { margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.alert-state { min-height: 29px; display: inline-flex; align-items: center; padding: 0 10px; border-radius: 20px; color: #87641f; background: var(--gold-soft); font-size: 11px; font-weight: 800; }
+.alert-state.new { color: var(--red); background: var(--red-soft); }.alert-state.closed { color: var(--green-700); background: var(--green-50); }
+.region-comparison > header,
+.region-comparison > a { grid-template-columns: 1.2fr .85fr .7fr .55fr .55fr .75fr .65fr 18px; }
+
+.alerts-list article { min-height: 76px; }
+.alert-level { width: 46px; height: 46px; }
+.alert-level svg { width: 21px; height: 21px; }
+.alerts-list b { font-size: 13px; line-height: 1.45; }
+.alerts-list p { margin-top: 5px; font-size: 11px; line-height: 1.6; }
+.alerts-list time { font-size: 10px; line-height: 1.4; }
+
+.workflow-chip { font-size: 11px; }
+.dashboard-content .patient-name b,
+.dashboard-content .patient-reason b { font-size: 11px; line-height: 1.45; }
+.dashboard-content .patient-name small,
+.dashboard-content .patient-location,
+.dashboard-content .patient-reason small,
+.dashboard-content .case-score-time small { font-size: 11px; line-height: 1.45; }
+.dashboard-content .cases-table > header { font-size: 11px; }
+
+/* A consistent, readable text scale across the pilgrim experience. */
+.pilgrim-app .page-content .card small,
+.pilgrim-app .page-content .card time { font-size: 13px !important; line-height: 1.55; }
+.pilgrim-app .page-content .card p { font-size: 14px !important; line-height: 1.75; }
+.pilgrim-app .page-content .card button,
+.pilgrim-app .page-content .card a { font-size: 14px; }
+.pilgrim-app .page-content .eyebrow,
+.pilgrim-app .page-content .metric-state,
+.pilgrim-app .page-content .metric-label,
+.pilgrim-app .page-content .status-dot,
+.pilgrim-app .page-content .risk-badge,
+.pilgrim-app .page-content .card-label > span,
+.pilgrim-app .page-content .card-label > small,
+.pilgrim-app .page-content .date-chip,
+.pilgrim-app .page-content .chart-axis,
+.pilgrim-app .page-content .chart-value span,
+.pilgrim-app .page-content .chart-value em,
+.pilgrim-app .page-content .journey-map-legend,
+.pilgrim-app .page-content .timeline-item > div > span,
+.pilgrim-app .page-content .timeline-item time,
+.pilgrim-app .page-content .map-pin,
+.pilgrim-app .page-content .map-you b,
+.pilgrim-app .page-content .map-controls button,
+.pilgrim-app .page-content .route-point span,
+.pilgrim-app .page-content .destination-stats small { font-size: 13px !important; }
+.pilgrim-app .page-content .timeline-item h3,
+.pilgrim-app .page-content .stage-detail-meta b,
+.pilgrim-app .page-content .route-point b,
+.pilgrim-app .page-content .route-stats b,
+.pilgrim-app .page-content .destination-stats b,
+.pilgrim-app .page-content .dua-card > div b,
+.pilgrim-app .page-content .quick-grid b,
+.pilgrim-app .page-content .alert-card b { font-size: 16px !important; }
+.pilgrim-app .page-content .quick-grid small,
+.pilgrim-app .page-content .alert-card span { font-size: 13px !important; }
+
+/* Medical profile: identity and emergency details are deliberately easy to scan. */
+.profile-layout .identity-card h2 { font-size: 27px; }
+.profile-layout .identity-card > p,
+.profile-layout .identity-card > span { font-size: 14px !important; }
+.profile-layout .identity-grid small { font-size: 13px !important; }
+.profile-layout .identity-grid b { font-size: 17px !important; }
+.profile-layout .info-card-head h3,
+.profile-layout .emergency-contact > b { font-size: 18px !important; }
+.profile-layout .info-card > p { font-size: 15px !important; }
+.privacy-card b { font-size: 18px !important; }
+.privacy-card p { font-size: 14px !important; }
+.privacy-card button { font-size: 14px !important; }
+.emergency-preview header small,
+.emergency-preview dt,
+.emergency-preview > footer { font-size: 13px; }
+.emergency-preview dd,
+.emergency-person p { font-size: 15px; }
+
+/* Senior mode is an intentionally larger, high-contrast reading mode everywhere. */
+.senior-active .page-content .card small,
+.senior-active .page-content .card time { font-size: 16px !important; line-height: 1.6; }
+.senior-active .page-content .card p { font-size: 17px !important; line-height: 1.85; }
+.senior-active .page-content .card button,
+.senior-active .page-content .card a { font-size: 17px; }
+.senior-active .page-content .eyebrow,
+.senior-active .page-content .metric-state,
+.senior-active .page-content .metric-label,
+.senior-active .page-content .status-dot,
+.senior-active .page-content .risk-badge,
+.senior-active .page-content .card-label > span,
+.senior-active .page-content .card-label > small,
+.senior-active .page-content .date-chip,
+.senior-active .page-content .chart-axis,
+.senior-active .page-content .chart-value span,
+.senior-active .page-content .chart-value em,
+.senior-active .page-content .journey-map-legend,
+.senior-active .page-content .timeline-item > div > span,
+.senior-active .page-content .timeline-item time,
+.senior-active .page-content .map-pin,
+.senior-active .page-content .map-you b,
+.senior-active .page-content .map-controls button,
+.senior-active .page-content .route-point span,
+.senior-active .page-content .destination-stats small { font-size: 16px !important; }
+.senior-active .page-content .timeline-item h3,
+.senior-active .page-content .stage-detail-meta b,
+.senior-active .page-content .route-point b,
+.senior-active .page-content .route-stats b,
+.senior-active .page-content .destination-stats b,
+.senior-active .page-content .dua-card > div b,
+.senior-active .page-content .quick-grid b,
+.senior-active .page-content .alert-card b { font-size: 21px !important; }
+.senior-active .page-content .quick-grid small,
+.senior-active .page-content .alert-card span { font-size: 16px !important; }
+.senior-active .profile-layout .identity-card { padding: 28px; }
+.senior-active .profile-layout .identity-avatar { width: 88px; height: 88px; font-size: 28px; }
+.senior-active .profile-layout .identity-card h2 { font-size: 35px; }
+.senior-active .profile-layout .identity-card > p,
+.senior-active .profile-layout .identity-card > span { font-size: 18px !important; }
+.senior-active .profile-layout .identity-grid { gap: 14px; }
+.senior-active .profile-layout .identity-grid span { min-height: 92px; padding: 16px; }
+.senior-active .profile-layout .identity-grid small { font-size: 16px !important; }
+.senior-active .profile-layout .identity-grid b { font-size: 22px !important; }
+.senior-active .profile-layout .info-card { min-height: 170px; padding: 23px; }
+.senior-active .profile-layout .info-card-head h3,
+.senior-active .profile-layout .emergency-contact > b { font-size: 23px !important; }
+.senior-active .profile-layout .info-card > p { font-size: 18px !important; }
+.senior-active .privacy-card { padding: 23px; }
+.senior-active .privacy-card b { font-size: 23px !important; }
+.senior-active .privacy-card p { font-size: 17px !important; }
+.senior-active .privacy-card button { min-height: 54px; font-size: 17px !important; }
+.senior-active .emergency-preview { padding: 30px; }
+.senior-active .emergency-preview header small,
+.senior-active .emergency-preview dt,
+.senior-active .emergency-preview > footer { font-size: 16px; }
+.senior-active .emergency-preview dd,
+.senior-active .emergency-person p { font-size: 18px; }
+
+/* Keep the assistant conversation one step larger than the general reading scale. */
+.pilgrim-app .assistant-chat-only .message p { font-size: 16px !important; }
+.pilgrim-app .assistant-chat-only .message time { font-size: 12px !important; }
+.senior-active .assistant-chat-only .message p { font-size: 21px !important; }
+.senior-active .assistant-chat-only .message time { font-size: 14px !important; }
+
+@media (max-width: 1100px) {
+  .quick-grid { grid-template-columns: repeat(3, 1fr); }
+  .demo-tools { grid-template-columns: 1fr; }
+  .demo-state-buttons { width: max-content; }
+  .cases-table > header, .case-table-row { min-width: 980px; }
+  .region-comparison > header, .region-comparison > a { min-width: 880px; }
+}
+
+@media (max-width: 700px) {
+  .demo-nav .demo-back { display: none; }
+  .demo-selection-main { min-height: calc(100vh - 70px); padding: 48px 16px; }
+  .demo-selection-intro h1 { font-size: 35px; }
+  .demo-role-cards .role-card { min-height: 205px; }
+  .mobile-bottom-nav { display: grid; grid-template-columns: repeat(6, 1fr); justify-content: stretch; }
+  .mobile-bottom-nav a { width: auto; min-width: 0; font-size: 9px; }
+  .mobile-bottom-nav a svg { width: 19px; }
+  .quick-grid { grid-template-columns: 1fr 1fr; }
+  .reading-meta a { margin-inline-start: 0; }
+  .assistant-chat-only { height: calc(100vh - 66px); min-height: 560px; }
+  .assistant-chat-only .chat-panel { min-height: 100%; }
+  .assistant-chat-only .messages { padding-inline: 14px; }
+  .assistant-chat-only .suggested-prompts,
+  .assistant-chat-only .chat-input { margin-inline: 0; }
+  .senior-active .assistant-chat-only .chat-header { min-height: 100px; padding: 16px; }
+  .senior-active .assistant-chat-only .chat-header h1 { font-size: 26px; }
+  .senior-active .assistant-chat-only .context-strip > span { padding: 14px 10px; }
+  .senior-active .assistant-chat-only .context-strip small { font-size: 13px !important; }
+  .senior-active .assistant-chat-only .context-strip b { font-size: 16px; }
+  .senior-active .assistant-chat-only .message p { font-size: 18px !important; }
+  .senior-active .assistant-chat-only .suggested-prompts button { height: 46px; padding-inline: 16px; font-size: 15px; }
+  .senior-active .assistant-chat-only .chat-input input { font-size: 18px; }
+  .journey-map-card { padding: 12px; }
+  .demo-state-buttons { width: 100%; overflow-x: auto; }
+  .demo-state-buttons button { flex: 1 0 auto; }
+  .emergency-preview { max-height: 92vh; overflow-y: auto; padding: 20px; }
+  .emergency-preview dl div { grid-template-columns: 1fr; gap: 5px; }
+  .drawer-summary { grid-template-columns: 1fr 1fr; }
+  .drawer-vitals { grid-template-columns: 1fr; }
+  .drawer-medical div { grid-template-columns: 1fr; }
+  .case-drawer { padding: 18px; }
+  .drawer-actions { margin-inline: -18px; margin-bottom: -18px; padding-inline: 18px; }
+  .sector-map { min-height: 470px; }
+  .sector-block { width: 130px; min-height: 105px; }
+  .sector-1 { top: 6%; right: 5%; }.sector-2 { top: 9%; left: 5%; }.sector-3 { bottom: 24%; right: 7%; }.sector-4 { bottom: 20%; left: 5%; }
+  .sector-connections { display: none; }
+  .activity-feed > div { grid-template-columns: 1fr; }
+  .operations-map .sector-map { min-height: 470px; }
+}
+
+@media (max-width: 420px) {
+  .quick-grid { grid-template-columns: 1fr; }
+  .mobile-bottom-nav a { font-size: 8px; }
+  .mobile-bottom-nav a svg { width: 18px; }
+  .drawer-actions { grid-template-columns: 1fr; }
+}

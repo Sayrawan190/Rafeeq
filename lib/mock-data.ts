@@ -26,6 +26,7 @@ export const vitalSeries = {
   heart: [72, 75, 73, 77, 82, 80, 78, 79, 76, 78, 77, 78],
   oxygen: [98, 98, 97, 98, 98, 97, 98, 99, 98, 98, 98, 98],
   temp: [36.5, 36.5, 36.6, 36.7, 36.9, 37.1, 36.9, 36.8, 36.7, 36.7, 36.6, 36.7],
+  activity: [180, 240, 310, 520, 690, 880, 1220, 1810, 2460, 3180, 3990, 4820],
 };
 
 export const healthAlerts = [
@@ -35,10 +36,11 @@ export const healthAlerts = [
 ];
 
 export const journeyStages = [
-  { id: "ihram", title: "الإحرام", subtitle: "تمت المرحلة", time: "8 ذو الحجة · 9:00 ص", state: "done", note: "نية النسك والتلبية" },
+  { id: "haram", title: "الحرم", subtitle: "تمت المرحلة", time: "8 ذو الحجة · 9:00 ص", state: "done", note: "بداية الرحلة والاستعداد للمناسك" },
   { id: "arafah", title: "عرفة", subtitle: "مرحلتك الحالية", time: "9 ذو الحجة · الآن", state: "current", note: "الوقوف بعرفة والإكثار من الدعاء" },
   { id: "muzdalifah", title: "مزدلفة", subtitle: "الوجهة التالية", time: "بعد المغرب · 7:15 م", state: "next", note: "المبيت وجمع الحصى" },
-  { id: "mina", title: "منى", subtitle: "غدًا", time: "10 ذو الحجة · 5:30 ص", state: "next", note: "رمي جمرة العقبة والذبح" },
+  { id: "mina", title: "منى", subtitle: "مرحلة قادمة", time: "10 ذو الحجة · 5:30 ص", state: "upcoming", note: "الاستقرار في المخيم والاستعداد للرمي" },
+  { id: "jamarat", title: "الجمرات", subtitle: "مرحلة قادمة", time: "10 ذو الحجة · 8:00 ص", state: "upcoming", note: "رمي جمرة العقبة وفق تنظيم المجموعة" },
 ];
 
 export const bracelet = {
@@ -56,11 +58,12 @@ export const bracelet = {
 };
 
 export const medicalCases = [
-  { id: "RFQ-9812", name: "سعد علي الغامدي", age: 70, location: "عرفات · A-14", heart: 142, temp: 39.2, spo2: 91, score: 0.92, level: "critical" as RiskLevel, reason: "مؤشرات إجهاد حراري حاد", status: "جديدة" },
-  { id: "RFQ-7740", name: "محمد سالم أحمد", age: 65, location: "منى · C-08", heart: 126, temp: 38.4, spo2: 93, score: 0.78, level: "high" as RiskLevel, reason: "ارتفاع تدريجي في الخطر", status: "تم التعيين" },
-  { id: "RFQ-6621", name: "أمينة يوسف خان", age: 61, location: "مزدلفة · M-03", heart: 118, temp: 38.1, spo2: 95, score: 0.64, level: "medium" as RiskLevel, reason: "إجهاد وحرارة مرتفعة", status: "الفريق في الطريق" },
-  { id: "RFQ-5109", name: "إبراهيم حسن عمر", age: 55, location: "الحرم · H-22", heart: 102, temp: 37.6, spo2: 97, score: 0.41, level: "medium" as RiskLevel, reason: "تسارع نبض مؤقت", status: "قيد المتابعة" },
-  { id: "RFQ-4302", name: "فاطمة نور الدين", age: 49, location: "عرفات · B-12", heart: 82, temp: 36.8, spo2: 98, score: 0.18, level: "normal" as RiskLevel, reason: "مراقبة روتينية", status: "مستقرة" },
+  { id: "RFQ-9812", name: "سعد علي الغامدي", age: 70, location: "عرفات · A-14", heart: 142, temp: 39.2, spo2: 91, score: 0.92, level: "critical" as RiskLevel, reason: "مؤشرات إجهاد حراري حاد", status: "جديدة", alertTime: "منذ دقيقتين", alertMinutes: 2 },
+  { id: "RFQ-7740", name: "محمد سالم أحمد", age: 65, location: "منى · C-08", heart: 126, temp: 38.4, spo2: 93, score: 0.78, level: "high" as RiskLevel, reason: "ارتفاع تدريجي في الخطر", status: "تم التعيين", alertTime: "منذ 5 دقائق", alertMinutes: 5 },
+  { id: "RFQ-6621", name: "أمينة يوسف خان", age: 61, location: "مزدلفة · M-03", heart: 118, temp: 38.1, spo2: 95, score: 0.64, level: "medium" as RiskLevel, reason: "إجهاد وحرارة مرتفعة", status: "الفريق في الطريق", alertTime: "منذ 9 دقائق", alertMinutes: 9 },
+  { id: "RFQ-5109", name: "إبراهيم حسن عمر", age: 55, location: "الحرم · H-22", heart: 102, temp: 37.6, spo2: 97, score: 0.41, level: "medium" as RiskLevel, reason: "تسارع نبض مؤقت", status: "قيد المتابعة", alertTime: "منذ 14 دقيقة", alertMinutes: 14 },
+  { id: "RFQ-4302", name: "فاطمة نور الدين", age: 49, location: "عرفات · B-12", heart: 82, temp: 36.8, spo2: 98, score: 0.18, level: "normal" as RiskLevel, reason: "مراقبة روتينية", status: "مستقرة", alertTime: "منذ 22 دقيقة", alertMinutes: 22 },
+  { id: "RFQ-3190", name: "عائشة محمود علي", age: 58, location: "منى · C-11", heart: 88, temp: 36.9, spo2: 97, score: 0.21, level: "normal" as RiskLevel, reason: "إجهاد بسيط تمت معالجته", status: "مغلقة", alertTime: "منذ 38 دقيقة", alertMinutes: 38 },
 ];
 
 export const regions = [
@@ -87,7 +90,7 @@ export const trustedReligiousCards = [
 
 export const suggestedPrompts = [
   "وش الخطوة التالية؟",
-  "وين أروح الآن؟",
   "كيف حالتي الصحية؟",
-  "أعطني أدعية هذه المرحلة",
+  "متى أتحرك؟",
+  "أعطني دعاء هذه المرحلة",
 ];

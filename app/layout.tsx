@@ -3,6 +3,7 @@ import "./globals.css";
 import "./pilgrim-pages.css";
 import "./dashboards.css";
 import "./responsive.css";
+import "./enhancements.css";
 import { AppProvider } from "@/components/app-provider";
 
 export const metadata: Metadata = {

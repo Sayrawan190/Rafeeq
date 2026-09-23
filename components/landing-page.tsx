@@ -35,7 +35,7 @@ export function LandingPage() {
     <div className="landing">
       <header className="landing-nav">
         <Logo />
-        <nav><a href="#ecosystem">{tr("المنظومة", "Ecosystem")}</a><a href="#experiences">{tr("تجربة المنصة", "Platform demo")}</a><a href="#principles">{tr("الموثوقية", "Trust")}</a></nav>
+        <nav><a href="#ecosystem">{tr("المنظومة", "Ecosystem")}</a><Link href="/demo">{tr("تجربة المنصة", "Platform demo")}</Link><a href="#principles">{tr("الموثوقية", "Trust")}</a></nav>
         <button className="language-button" onClick={() => setLanguage(language === "ar" ? "en" : "ar")}><Languages size={18}/>{language === "ar" ? "English" : "العربية"}</button>
       </header>
 
@@ -45,9 +45,9 @@ export function LandingPage() {
           <div className="hero-orb orb-one"/><div className="hero-orb orb-two"/>
           <div className="hero-content">
             <span className="hero-kicker"><Sparkles size={16}/>{tr("منظومة ذكاء صحي لخدمة ضيوف الرحمن", "Health intelligence for the Guests of Allah")}</span>
-            <h1>{tr("رفيقك الصحي في رحلة", "Your health companion through")}<br/><em>{tr("ضيوف الرحمن", "the pilgrimage journey")}</em></h1>
-            <p>{tr("منظومة ذكية تربط السوار الصحي والتطبيق والذكاء الاصطناعي والطواقم الطبية، لتحويل القراءات الصغيرة إلى استجابة مبكرة وقرار تشغيلي أوضح.", "A connected health ecosystem bringing together the smart bracelet, pilgrim app, AI-assisted risk signals, medical teams and operations.")}</p>
-            <div className="hero-actions"><a className="primary-cta" href="#experiences">{tr("ابدأ التجربة", "Start the demo")}<ArrowLeft size={19}/></a><Link className="secondary-cta" href="/app">{tr("دخول مباشر كتجربة حاج", "Enter pilgrim demo")}</Link></div>
+            <h1>{tr("رفيق الصحي في رحلة", "A health companion through")}<br/><em>{tr("ضيوف الرحمن", "the pilgrimage journey")}</em></h1>
+            <p>{tr("منظومة ذكية تربط السوار الصحي والتطبيق والطواقم الطبية وغرفة العمليات لتحويل القراءات الصغيرة إلى استجابة مبكرة وقرار تشغيلي أوضح.", "A connected health ecosystem linking the smart band, app, medical teams and operations for earlier response and clearer decisions.")}</p>
+            <div className="hero-actions"><Link className="primary-cta" href="/demo">{tr("ابدأ التجربة", "Start the demo")}<ArrowLeft size={19}/></Link><a className="secondary-cta" href="#ecosystem">{tr("استعرض المنظومة", "Explore the ecosystem")}</a></div>
             <div className="hero-trust"><span><ShieldCheck/>بيانات تجريبية آمنة</span><span><CheckCircle2/>لا يقدم تشخيصًا طبيًا</span><span><Activity/>{dbState === "connected" ? "قاعدة البيانات متصلة" : dbState === "checking" ? "جارٍ فحص النظام" : "وضع العرض التجريبي"}</span></div>
           </div>
           <div className="hero-visual" aria-label="معاينة تطبيق رفيق">
@@ -75,21 +75,38 @@ export function LandingPage() {
           </div>
         </section>
 
-        <section className="experiences-section" id="experiences">
-          <div className="section-intro light"><span>LIVE MVP</span><h2>{tr("اختر تجربة العرض", "Choose a demo experience")}</h2><p>{tr("كل تجربة مستقلة بصلاحيات ومعلومات تناسب دور المستخدم.", "Each experience reflects its role, context and access level.")}</p></div>
-          <div className="role-cards">
-            <RoleCard href="/app" icon={Smartphone} title="تجربة الحاج" text="تابع صحتك ورحلتك، اسأل رفيق، وجرّب طلب المساعدة." color="mint" />
-            <RoleCard href="/medical" icon={BriefcaseMedical} title="الطاقم الطبي" text="راجع الحالات بالأولوية وافتح سجلًا طبيًا متكاملًا." color="gold" />
-            <RoleCard href="/operations" icon={LayoutDashboard} title="غرفة العمليات" text="راقب المناطق والمخاطر الصحية واتخذ إجراءً تشغيليًا." color="cream" />
-          </div>
-        </section>
-
         <section className="principles-section" id="principles">
           <div><span className="eyebrow">مسؤولية واضحة</span><h2>ذكاء مساعد، لا تشخيص طبي</h2><p>يعرض النموذج قراءات ومحاكاة توضح تجربة النظام المقترحة. مؤشرات الخطر تجريبية وغير معتمدة سريريًا، والمحتوى الديني من مصادر موثوقة مع إحالة المسائل الشرعية المتخصصة.</p></div>
           <div className="principle-grid"><span><ShieldCheck/><b>خصوصية حسب الدور</b><small>لا تظهر بيانات الأفراد في واجهة العمليات.</small></span><span><MapPin/><b>الموقع من الهاتف</b><small>السوار لا يحتوي على GPS.</small></span><span><Bot/><b>مساعد سياقي</b><small>يتعامل مع رحلة الحاج وحالته بأمان.</small></span></div>
         </section>
       </main>
-      <footer className="landing-footer"><Logo light/><p>رفيق · نموذج أولي لعرض المنظومة الصحية الذكية</p><span>1447 هـ</span></footer>
+      <footer className="landing-footer"><Logo light/><p>رفيق · نموذج أولي لعرض المنظومة الصحية الذكية</p><span>1448 هـ</span></footer>
+    </div>
+  );
+}
+
+export function DemoSelectionPage() {
+  const { language, setLanguage, tr } = useRafeeq();
+  return (
+    <div className="demo-selection">
+      <header className="landing-nav demo-nav">
+        <Logo />
+        <Link className="demo-back" href="/"><ArrowLeft size={17}/>{tr("العودة للرئيسية", "Back to home")}</Link>
+        <button className="language-button" onClick={() => setLanguage(language === "ar" ? "en" : "ar")}><Languages size={18}/>{language === "ar" ? "English" : "العربية"}</button>
+      </header>
+      <main className="demo-selection-main">
+        <div className="demo-selection-intro">
+          <span className="demo-pill"><Sparkles size={15}/>{tr("عرض توضيحي · بيانات تجريبية", "Demo · Simulated data")}</span>
+          <h1>{tr("اختر منظورك في منظومة رفيق", "Choose your view of Rafeeq")}</h1>
+          <p>{tr("ثلاث تجارب مترابطة تعرض المنظومة نفسها من منظور الحاج، والطاقم الطبي، وغرفة العمليات.", "Three connected experiences show the same system from the pilgrim, medical team and operations perspectives.")}</p>
+        </div>
+        <div className="role-cards demo-role-cards">
+          <RoleCard href="/app" icon={Smartphone} title="تجربة الحاج" text="تابع صحتك ورحلتك، اسأل رفيق، وجرّب طلب المساعدة." color="mint" />
+          <RoleCard href="/medical" icon={BriefcaseMedical} title="الطاقم الطبي" text="راجع الحالات حسب الأولوية وتعامل معها من درج جانبي سريع." color="gold" />
+          <RoleCard href="/operations" icon={LayoutDashboard} title="غرفة العمليات" text="راقب القطاعات والمخاطر المجمعة واتخذ إجراءً تشغيليًا." color="cream" />
+        </div>
+        <p className="demo-context-note"><ShieldCheck size={16}/>{tr("جميع المواقع والقراءات والحالات المعروضة محاكاة لأغراض العرض فقط.", "All locations, readings and cases are simulated for demonstration only.")}</p>
+      </main>
     </div>
   );
 }

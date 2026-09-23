@@ -3,4 +3,6 @@ node_modules/
 out/
 .env*.local
 npm-debug.log*
+pnpm-lock.yaml
 tmp/
+tsconfig.tsbuildinfo
